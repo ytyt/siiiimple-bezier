@@ -1,1 +1,131 @@
-test
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>Siiiimple Bézier Curve Animation Simulator</title>
+<link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+<div class="container">
+<div class="header">
+<div class="header-inner">
+<h1>Siiiimple Bézier Curve Animation Simulator</h1>
+<span class="help">Help ?</span>
+</div>
+</div>
+
+<div class="content">
+<div class="canvasWrap">
+<canvas id="canvas" width="500" height="500"></canvas>
+</div>
+
+<div id="inputArea" class="inputArea">
+	<div id="replayBtn" class="replayBtn">Replay</div>
+	<div class="easing">
+		Easing：
+		<select id="easingSelect">
+			<option value="linear">linear</option>
+			<option value="easeInQuad">easeInQuad</option>
+			<option value="easeOutQuad">easeOutQuad</option>
+			<option value="easeInCubic">easeInCubic</option>
+			<option value="easeOutCubic">easeOutCubic</option>
+		</select>
+	</div>
+	<div class="inputItem">
+		<label>State：Width</label><input id="canvasWidth" type="text" value="500">
+		<label>Height</label><input id="canvasHeight" type="text" value="500">
+	</div>
+	<div class="inputItem">
+		<label>Speed：</label><input id="speed" type="text" value="1000">
+	</div>
+	<div id="draggables">
+		<div class="inputItem inputCoord draggable">
+			<span>1</span>
+			<label>X</label><input class="inputX" type="text" value="40">
+			<label>Y</label><input class="inputY" type="text" value="400">
+			<div class="delete"></div>
+		</div>
+		<div class="inputItem inputCoord draggable">
+			<span>2</span>
+			<label>X</label><input class="inputX" type="text" value="80">
+			<label>Y</label><input class="inputY" type="text" value="120">
+			<div class="delete"></div>
+		</div>
+		<div class="inputItem inputCoord draggable">
+			<span>3</span>
+			<label>X</label><input class="inputX" type="text" value="180">
+			<label>Y</label><input class="inputY" type="text" value="40">
+			<div class="delete"></div>
+		</div>
+		<div class="inputItem inputCoord draggable">
+			<span>4</span>
+			<label>X</label><input class="inputX" type="text" value="300">
+			<label>Y</label><input class="inputY" type="text" value="40">
+			<div class="delete"></div>
+		</div>
+		<div class="inputItem inputCoord draggable">
+			<span>5</span>
+			<label>X</label><input class="inputX" type="text" value="420">
+			<label>Y</label><input class="inputY" type="text" value="380">
+			<div class="delete"></div>
+		</div>
+	</div>
+	<div id="add" class="add">Add</div>
+	<p>Drag the gray bar to reorder the control points,</p>
+	<p>or you can directly drag the dots on the canvas.</p>
+</div>
+
+<div id="outputArea" class="outputArea">
+<div id="urlBtn" class="outputBtn">Output URL</div>
+<input id="url" type="text" class="urlInput">
+<div id="outputBtn" class="outputBtn">Output Code</div>
+<div class="tabarea">
+<div id="tab" class="tab">
+<span class="js current">Javascript</span>
+<span class="jq">jQuery</span>
+</div>
+<div id="tabContent" class="tabContent">
+<textarea id="outputJS" class="js current"></textarea>
+<textarea id="outputJQ" class="jq"></textarea>
+</div>
+</div>
+<p>The output code in the textarea is not the complete code.</p>
+<p>Do some adjustments (like use transform instead of top/left), if you use the code for your project.</p>
+<p>And of course you need jQuery and jQuery Easing plugin, if you want to run the jQuery animation code.</p>
+</div>
+</div>
+<div class="footer">Made by Yuuki Tanaka. (๑˃̵ᴗ˂̵)و</div>
+</div>
+
+<div id="overlayMask"></div>
+<div class="overlayContent guide guide01">
+	<div class="msgBox">
+		<p>drag the control points(dots) to change the curve.</p>
+		<p class="next">next</p>
+		<p class="step">1/4</p>
+	</div>
+</div>
+<div class="overlayContent guide guide02">
+	<div class="msgBox">
+		<p>change the config value(speed, easing, etc..), add/remove/order control points, and replay the animation.</p>
+		<p class="next">next</p>
+		<p class="step">2/4</p>
+	</div>
+</div>
+<div class="overlayContent guide guide03">
+	<div class="msgBox">
+		<p>output the url with query strings based on the values you set.</p>
+		<p class="next">next</p>
+		<p class="step">3/4</p>
+	</div>
+</div>
+<div class="overlayContent guide guide04">
+	<div class="msgBox">
+		<p>output the Javascript/jQuery code to do the animation.</p>
+		<p class="next closeOverlay">close</p>
+		<p class="step">4/4</p>
+	</div>
+</div>
+<script src="./script/app.js"></script>
+</body>
+</html>
