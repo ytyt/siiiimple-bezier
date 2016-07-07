@@ -42,6 +42,8 @@ body {
 	opacity: 0.9;
 }
 .content {
+	width: 980px;
+	margin: 0 auto;
 	padding-bottom: 10px;
 }
 .content:after {
