@@ -55,9 +55,6 @@ function propInit() {
 	for(var i = 0; i < inputCoord.length; i ++) {
 		coordX.push(+inputCoord[i].querySelector('.inputX').value || 0);
 		coordY.push(+inputCoord[i].querySelector('.inputY').value || 0);
-		// value属性を更新
-		inputCoord[i].querySelector('.inputX').setAttribute('value', inputCoord[i].querySelector('.inputX').value);
-		inputCoord[i].querySelector('.inputY').setAttribute('value', inputCoord[i].querySelector('.inputY').value);
 		// ラベルテキストの更新
 		inputCoord[i].querySelector('span').innerHTML = i + 1;
 	}
